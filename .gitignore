@@ -1,0 +1,14 @@
+signer
+signer.exe
+signer*
+
+.pubkey_shown
+
+node_modules/
+package-lock.json
+
+*.js.map
+*.tsbuildinfo
+
+.DS_Store
+Thumbs.db
