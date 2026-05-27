@@ -1,11 +1,12 @@
 # Red Signer Plugin Installer (lightweight method) for Windows
 $REPO = "StandardCodebase/obsidian-red-signer"
-$PLUGIN_NAME = "red-signer"
+$PLUGIN_NAME = "obsidian-red-signer"
 
 Write-Host "🔍 Locating your Obsidian vault..." -ForegroundColor Cyan
 $VAULT_PATH = Read-Host "Enter the full path to your Obsidian vault (e.g., C:\Users\You\Documents\Vault)"
 
-if (-not (Test-Path $VAULT_PATH)) {
+if (-not (Test-Path $VAULT_PATH))
+{
     Write-Host "❌ Vault not found: $VAULT_PATH" -ForegroundColor Red
     exit 1
 }
@@ -22,7 +23,8 @@ $MAINJS_URL = ($RELEASE_JSON.assets | Where-Object { $_.name -eq "main.js" }).br
 $BIN_NAME = "signer-windows-x64.exe"
 $BIN_URL = ($RELEASE_JSON.assets | Where-Object { $_.name -eq $BIN_NAME }).browser_download_url
 
-if (-not $MANIFEST_URL -or -not $MAINJS_URL -or -not $BIN_URL) {
+if (-not $MANIFEST_URL -or -not $MAINJS_URL -or -not $BIN_URL)
+{
     Write-Host "❌ Failed to find required assets in the latest release." -ForegroundColor Red
     exit 1
 }
