@@ -1,10 +1,4 @@
-Here is the **updated README** (replace the existing one) and a new **CHANGELOG.md** file for the Obsidian Red Signer plugin.
 
----
-
-## 📄 Updated `README.md`
-
-```markdown
 # Obsidian Red Signer (Project R.E.D. Network)
 
 **The official authoring bridge for the Project R.E.D. decentralized knowledge base.**
@@ -139,6 +133,4 @@ cd obsidian-red-signer
 npm install
 npm run build   # or `npx tsc`
 ```
-
-The compiled `main.js` will replace the existing one.
 
