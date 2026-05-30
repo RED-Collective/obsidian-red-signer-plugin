@@ -26,10 +26,8 @@ jobs:
           go-version: "1.22"
 
       - name: Install TypeScript dependencies
-        run: |
-          cd src
-          npm install
-          cd ..
+        working-directory: src
+        run: npm install
 
       - name: Compile TypeScript plugin
         run: |
@@ -54,13 +52,10 @@ jobs:
 
       - name: Remove unnecessary files from release context
         run: |
-          # Keep only the essential files in the root for the release assets
-          # Installer scripts are in scripts/ – we exclude them.
-          # Also remove source folders, node_modules, etc.
+          
           rm -rf src cmd scripts .gitlab node_modules .pubkey_shown .cache
           rm -f *.sh *.ps1 *.md~ *.js.map *.tsbuildinfo
-          # Keep README and CHANGELOG if you want them in the release (optional)
-          # rm -f README.md CHANGELOG.md  # uncomment if you don't want them
+          rm -f README.md CHANGELOG.md
 
       - name: Create release and upload assets
         uses: softprops/action-gh-release@v2
